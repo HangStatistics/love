@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白月光捕捉器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-container">
+                <img src="https://i.imgur.com/JZSJnfJ.png" alt="月亮" class="moon-icon">
+                <h1>白月光捕捉器</h1>
+                <img src="https://i.imgur.com/JZSJnfJ.png" alt="月亮" class="moon-icon">
+            </div>
+            <p class="subtitle">测试你与白月光的缘分指数</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="intro">
+                <p>每个人心中都有一个白月光，那个让你魂牵梦萦的TA，是否有机会成为你生命中的真实存在？</p>
+                <p>填写下面的信息，看看你与白月光的缘分指数吧！</p>
+                <div class="image-container">
+                    <img src="https://i.imgur.com/8YfJLHJ.png" alt="白月光插图" class="intro-image">
+                </div>
+            </div>
+            
+            <form id="moonlightForm">
+                <div class="form-section">
+                    <h2><i class="fas fa-user-circle"></i> 白月光基本信息</h2>
+                    <div class="form-group">
+                        <label for="name">白月光的名字</label>
+                        <input type="text" id="name" required placeholder="请输入TA的名字...">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="gender">性别</label>
+                            <select id="gender" required>
+                                <option value="" disabled selected>请选择</option>
+                                <option value="male">男</option>
+                                <option value="female">女</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="age">年龄</label>
+                            <input type="number" id="age" min="1" max="120" required placeholder="请输入年龄...">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-book-open"></i> 难忘故事</h2>
+                    <div class="form-group">
+                        <label for="story">你和白月光最难忘的故事</label>
+                        <textarea id="story" rows="6" required placeholder="请描述你们之间最难忘的故事或回忆..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="storyRating">这个故事的感人程度</label>
+                        <div class="rating-container">
+                            <input type="range" id="storyRating" min="1" max="10" value="5" class="slider">
+                            <div class="rating-labels">
+                                <span>一般</span>
+                                <span>感人</span>
+                                <span>催泪</span>
+                            </div>
+                            <div class="rating-value"><span id="storyRatingValue">5</span>/10</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-heart"></i> 渴望程度</h2>
+                    <div class="form-group">
+                        <label for="desireLevel">你对白月光的渴望程度</label>
+                        <div class="rating-container">
+                            <input type="range" id="desireLevel" min="1" max="10" value="5" class="slider">
+                            <div class="rating-labels">
+                                <span>有点喜欢</span>
+                                <span>很喜欢</span>
+                                <span>无法自拔</span>
+                            </div>
+                            <div class="rating-value"><span id="desireLevelValue">5</span>/10</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" id="calculateBtn">计算缘分指数</button>
+                </div>
+            </form>
+            
+            <div id="resultContainer" class="result-container" style="display: none;">
+                <div class="result-header">
+                    <h2>缘分测试结果</h2>
+                </div>
+                
+                <div class="result-content">
+                    <div class="score-container">
+                        <div class="score-circle">
+                            <span id="scoreValue">0</span>
+                        </div>
+                        <div class="score-label">缘分指数</div>
+                    </div>
+                    
+                    <div class="result-message">
+                        <h3 id="resultTitle"></h3>
+                        <p id="resultDescription"></p>
+                    </div>
+                    
+                    <div class="result-image-container">
+                        <img id="resultImage" src="" alt="结果图片">
+                    </div>
+                </div>
+                
+                <div class="result-actions">
+                    <button id="tryAgainBtn">重新测试</button>
+                    <button id="shareBtn">分享结果</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>白月光捕捉器 &copy; 2023 - 愿你找到心中的白月光</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
